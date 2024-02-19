@@ -1,0 +1,15 @@
+{
+  "name": "builder-server",
+  "version": "1.0.0",
+  "description": "this piece of software is for building the user uploaded source code in a containerized environment in cloud and store in a storage the built files",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.515.0",
+    "mime-types": "^2.1.35"
+  }
+}
