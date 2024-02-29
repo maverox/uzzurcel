@@ -5,14 +5,20 @@ const mime = require('mime-types');
 const { log } = require('console');
 const fs = require('fs');
 
+const PROJECT_ID = process.env.PROJECT_ID;
+const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+const redisUri = process.env.REDIS_URI;
+// console.log('PROJECT_ID', PROJECT_ID);
+// console.log('accessKeyId', accessKeyId);
+// console.log('secretAccessKey', secretAccessKey);
+const publisher = new Redis(redisUri || 'rediss://default:AVNS_3PufbSGknfc4JCBT9Vw@redis-74756b6-uzzurcel.a.aivencloud.com:18898');
 
 const s3CLient = new S3Client({
     region: 'ap-south-1',
     credentials: {
-        accessKeyId: 'AKIAXYKJUWVFCTZARDO5',
-        secretAccessKey: '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',
-
-
+        accessKeyId,
+        secretAccessKey,
     }
 });
 
