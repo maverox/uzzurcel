@@ -11,7 +11,8 @@ require('dotenv').config(
 );
 
 const app = express();
-const subscriber = new Redis('rediss://default:AVNS_3PufbSGknfc4JCBT9Vw@redis-74756b6-uzzurcel.a.aivencloud.com:18898');
+const redisUri = process.env.REDIS_URI;
+const subscriber = new Redis(redisUri);
 const port = process.env.PORT || 9000;
 const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
 const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
